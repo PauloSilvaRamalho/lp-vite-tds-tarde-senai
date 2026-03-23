@@ -1,0 +1,215 @@
+.s1{
+    min-height: 100vh;
+    height: auto;
+    padding-top: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 100px;
+}
+
+.imgSide{
+    width: 300px;
+    border-radius: 999px;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 3px 10px #0a2c3a;
+}
+
+.imgSide img{
+    width: 300px;
+    height: 300px;
+    transition: all 200ms linear;
+    filter: grayscale(1);
+    cursor: pointer;
+}
+
+.imgSide img:hover{
+    transform: scale(1.1);
+    filter: grayscale(0)
+}
+
+.texSide{
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.texSide h1{
+    font-size: 48px;
+    text-align: left;
+    width: 100%;
+}
+
+.s2{
+    min-height: 100vh;
+    height: auto;
+    background-image: url('/bg.jpg');
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+
+.s3{
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+
+.animatedText{
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.animatedText span{
+    position: relative;
+}
+
+.animatedText span::before{
+    content: "Phoenix";
+    color: rgb(255, 102, 0);
+    animation: words 20s infinite;
+}
+
+.animatedText span::after{
+    content: "";
+    background-color: white;
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 2px solid rgb(0, 102, 255);
+    right: -8px;
+    animation: cursor .8s infinite, typing 20s steps(10) infinite;
+
+}
+
+@keyframes cursor {
+    to{
+        border-left: 2px solid white ;
+    }
+}
+
+@keyframes words {
+    0%,20%{
+        content: "Phoenix";
+        color: rgb(255, 102, 0);
+    }
+    21%,40%{
+        content: "Titan";
+        color: rgb(255, 194, 24);
+    }
+    41%,60%{
+        content: "Garuda";
+        color: rgb(0, 255, 0);
+    }
+    61%,80%{
+        content: "Ramuh";
+        color: rgb(204, 0, 255);
+    }
+    81%,100%{
+        content: "Odin";
+        color: rgb(255, 0, 157);
+    }
+    101%,120%{
+        content: "Bahamut";
+        color: rgb(0, 255, 242);
+    }
+    121%,140%{
+        content: "Ifrit";
+        color: rgb(255, 38, 0);
+    }
+}
+
+@keyframes typing {
+    10%,15%,30%,35%,50%,55%,70%,75%,90%,95%{
+        width: 0;
+    }
+    5%,20%,25%,40%,45%,60%,65%,80%,85%{
+        width: calc(100% + 8px)
+    }
+}
+
+.s4{
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.formulario{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    border: 2px solid var(--dark);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0px 3px 10px var(--dark);
+}
+
+.formulario label{
+    width: 100%;
+    margin-bottom: -15px;
+}
+
+.formulario input{
+    width: 100%;
+    padding: 10px;
+    border-radius: 999px;
+}
+
+.formulario textarea{
+    padding: 10px;
+    width: 100%;
+    min-width: 255px;
+    max-width: 255px;
+    height: 150px;
+    max-height: 150px;
+    min-height: 150px;
+    border-radius: 10px;
+}
+
+.btn{
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: transparent;
+    border: 2px solid var(--dark);
+    transition: all 200ms ease-in-out;
+}
+
+.btn:hover{
+    cursor: pointer;
+    border: 2px solid var(--fl);
+    background-color: var(--dark);
+    color: var(--fl);
+    box-shadow: 0px 3px 10px var(--dark);
+}
+
+@media (width <= 1000px){
+    #s1{
+        min-height: 60vh;
+        padding: 100px 20px 20px 20px;
+    }
+    .texSide{
+        height: 300px;
+    }
+}
